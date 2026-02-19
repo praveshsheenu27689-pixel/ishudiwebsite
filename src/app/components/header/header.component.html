@@ -1,0 +1,25 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <h2><i class="fas fa-code"></i> DevBootcamp</h2>
+      </div>
+      <ul class="nav-menu" [class.active]="isMenuOpen">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a></li>
+        <li><a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Services</a></li>
+        <li><a routerLink="/training" routerLinkActive="active" (click)="closeMenu()">Training</a></li>
+        <li><a routerLink="/placement" routerLinkActive="active" (click)="closeMenu()">Placement</a></li>
+        <li><a routerLink="/portfolio" routerLinkActive="active" (click)="closeMenu()">Portfolio</a></li>
+        <li><a routerLink="/testimonials" routerLinkActive="active" (click)="closeMenu()">Testimonials</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+      </ul>
+      <button class="cta-btn" routerLink="/contact">Enroll Now</button>
+      <div class="hamburger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+</header>

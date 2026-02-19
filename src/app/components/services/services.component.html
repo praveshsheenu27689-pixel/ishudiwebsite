@@ -1,0 +1,19 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>Our Services</h1>
+    <p>Comprehensive Learning Solutions</p>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <i [class]="service.icon"></i>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <button class="btn btn-primary" routerLink="/training">Learn More</button>
+      </div>
+    </div>
+  </div>
+</section>

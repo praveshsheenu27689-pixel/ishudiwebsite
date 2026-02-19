@@ -1,0 +1,117 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>What Our Students Say</h1>
+    <p>Real Reviews from Real Students</p>
+  </div>
+</section>
+
+<section class="overall-rating">
+  <div class="container">
+    <div class="rating-box">
+      <h2>4.8/5</h2>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+      <p>Based on 500+ Reviews</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Slider -->
+<section class="testimonial-slider">
+  <div class="container">
+    <h2 class="section-title">Student Reviews</h2>
+    <div class="slider-container">
+      <button class="slider-btn prev" (click)="prevSlide()">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <div class="slider-wrapper">
+        <div class="testimonial-slide" *ngFor="let testimonial of testimonials; let i = index" 
+             [class.active]="i === currentSlide">
+          <div class="slide-content">
+            <div class="stars">
+              <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+            </div>
+            <p class="feedback">"{{ testimonial.feedback }}"</p>
+            <div class="author">
+              <i [class]="testimonial.icon"></i>
+              <div class="author-info">
+                <h4>{{ testimonial.name }}</h4>
+                <span>{{ testimonial.role }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="slider-btn next" (click)="nextSlide()">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+    
+    <div class="slider-dots">
+      <span class="dot" *ngFor="let testimonial of testimonials; let i = index" 
+            [class.active]="i === currentSlide"
+            (click)="goToSlide(i)"></span>
+    </div>
+  </div>
+</section>
+
+<!-- All Testimonials Grid -->
+<section class="testimonials">
+  <div class="container">
+    <h2 class="section-title">All Reviews</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="stars">
+          <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+        </div>
+        <p>"{{ testimonial.feedback }}"</p>
+        <div class="testimonial-author">
+          <div class="author-image">
+            <i [class]="testimonial.icon"></i>
+          </div>
+          <div class="author-info">
+            <h4>{{ testimonial.name }}</h4>
+            <span>{{ testimonial.role }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Testimonials -->
+<section class="video-testimonials">
+  <div class="container">
+    <h2 class="section-title">Video Testimonials</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <i class="fas fa-play-circle"></i>
+        </div>
+        <h4>Rahul Sharma</h4>
+        <p>Placed at TCS - 7 LPA</p>
+      </div>
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <i class="fas fa-play-circle"></i>
+        </div>
+        <h4>Priya Patel</h4>
+        <p>Working at Infosys - 6.5 LPA</p>
+      </div>
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <i class="fas fa-play-circle"></i>
+        </div>
+        <h4>Amit Singh</h4>
+        <p>Career Switch Success Story</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+<section class="page-hero">
+  <div class="container">
+    <h1>Training Programs</h1>
+    <p>Industry-Aligned Curriculum</p>
+  </div>
+</section>
+
+<section class="training-modes">
+  <div class="container">
+    <h2 class="section-title">Mode of Training</h2>
+    <div class="mode-grid">
+      <div class="mode-card" *ngFor="let mode of trainingModes">
+        <i [class]="mode.icon"></i>
+        <h3>{{ mode.title }}</h3>
+        <p>{{ mode.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="course-filters">
+  <div class="container">
+    <div class="filter-tabs">
+      <button class="filter-btn" [class.active]="selectedFilter === 'all'" (click)="filterCourses('all')">All Courses</button>
+      <button class="filter-btn" [class.active]="selectedFilter === 'beginner'" (click)="filterCourses('beginner')">Beginner</button>
+      <button class="filter-btn" [class.active]="selectedFilter === 'intermediate'" (click)="filterCourses('intermediate')">Intermediate</button>
+      <button class="filter-btn" [class.active]="selectedFilter === 'advanced'" (click)="filterCourses('advanced')">Advanced</button>
+    </div>
+  </div>
+</section>
+
+<section class="courses">
+  <div class="container">
+    <div class="course-grid">
+      <div class="course-card" *ngFor="let course of filteredCourses; let i = index">
+        <div class="course-image">
+          <i [class]="course.icon"></i>
+        </div>
+        <div class="course-content">
+          <h3>{{ course.title }}</h3>
+          <div class="course-meta">
+            <span><i class="fas fa-clock"></i> {{ course.duration }}</span>
+            <span><i class="fas fa-signal"></i> {{ course.level | titlecase }}</span>
+          </div>
+          <div class="course-rating">
+            <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+            <span>({{ course.rating }}) | {{ course.students }}+ Students</span>
+          </div>
+          <p>{{ course.description }}</p>
+          <div class="course-price">₹{{ course.price | number }}</div>
+          
+          <!-- Syllabus Accordion -->
+          <div class="syllabus-section">
+            <button class="syllabus-toggle" (click)="toggleSyllabus(i)">
+              <i class="fas fa-book"></i> View Syllabus
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="syllabus-content" [class.active]="course['showSyllabus']">
+              <div class="syllabus-module" *ngFor="let module of course.syllabus">
+                <h4><i class="fas fa-check-circle"></i> {{ module.module }}</h4>
+                <ul>
+                  <li *ngFor="let topic of module.topics">{{ topic }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="course-buttons">
+            <button class="btn btn-secondary">View Details</button>
+            <button class="btn btn-primary" routerLink="/contact">Enroll Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

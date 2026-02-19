@@ -1,0 +1,87 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Become a Certified Full Stack Developer</h1>
+      <p>Transform Your Career with Industry-Ready Skills</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" routerLink="/contact">Enroll Now</button>
+        <button class="btn btn-secondary" routerLink="/training">View Courses</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <i class="fas fa-laptop-code"></i>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stat-box" *ngFor="let stat of stats">
+      <i [class]="stat.icon"></i>
+      <h3>{{ stat.value }}{{ stat.suffix }}</h3>
+      <p>{{ stat.label }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose">
+  <div class="container">
+    <h2 class="section-title">Why Choose Our Bootcamp?</h2>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Industry Expert Instructors</h3>
+        <p>Learn from professionals with 10+ years of experience in top tech companies</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-project-diagram"></i>
+        <h3>Live Projects & Internships</h3>
+        <p>Work on real-world projects and gain hands-on experience during the course</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-user-tie"></i>
+        <h3>100% Placement Assistance</h3>
+        <p>Dedicated placement cell with interview preparation and job guarantee</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-courses">
+  <div class="container">
+    <h2 class="section-title">Featured Courses</h2>
+    <div class="course-grid">
+      <div class="course-card" *ngFor="let course of featuredCourses">
+        <div class="course-image">
+          <i [class]="course.icon"></i>
+        </div>
+        <div class="course-content">
+          <h3>{{ course.title }}</h3>
+          <div class="course-meta">
+            <span><i class="fas fa-clock"></i> {{ course.duration }}</span>
+            <span><i class="fas fa-users"></i> {{ course.students }}+ Students</span>
+          </div>
+          <div class="course-rating">
+            <i class="fas fa-star" *ngFor="let star of [1,2,3,4,5]"></i>
+            <span>({{ course.rating }})</span>
+          </div>
+          <div class="course-price">₹{{ course.price | number }}</div>
+          <div class="course-buttons">
+            <button class="btn btn-secondary" routerLink="/training">View Details</button>
+            <button class="btn btn-primary" routerLink="/contact">Enroll Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Start Your Journey Today</h2>
+    <div class="cta-buttons">
+      <button class="btn btn-light"><i class="fas fa-download"></i> Download Brochure</button>
+      <button class="btn btn-primary" routerLink="/contact"><i class="fas fa-calendar"></i> Book Free Demo</button>
+    </div>
+  </div>
+</section>
