@@ -1,8 +1,4 @@
 {
-  "framework": "angular",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/devbootcamp",
-  "installCommand": "npm install",
   "rewrites": [
     {
       "source": "/(.*)",
