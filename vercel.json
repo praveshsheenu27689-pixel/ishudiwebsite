@@ -1,6 +1,7 @@
 {
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "npx ng build --configuration production",
   "outputDirectory": "dist/devbootcamp/browser",
+  "installCommand": "npm install",
   "rewrites": [
     {
       "source": "/(.*)",
